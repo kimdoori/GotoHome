@@ -1,0 +1,22 @@
+﻿빌드 시작: 2017-12-25 오후 9:24:31
+     1>2 노드의 "C:\Users\doori\Desktop\2501 김두리\cppProject\cppProject.vcxproj" 프로젝트(Build 대상)입니다.
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\doori\Desktop\2501 김두리\x64\Release\cppProject.exe" /INCREMENTAL:NO /NOLOGO libmysql.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\doori\Desktop\2501 김두리\x64\Release\cppProject.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\doori\Desktop\2501 김두리\x64\Release\cppProject.lib" /MACHINE:X64 x64\Release\ConnectDB.obj
+         x64\Release\GameScreen.obj
+         x64\Release\gotohome.obj
+         x64\Release\HowScreen.obj
+         x64\Release\MypageScreen.obj
+         x64\Release\ResultScreen.obj
+         x64\Release\Screen.obj
+         x64\Release\SetWindows.obj
+         x64\Release\SigninScreen.obj
+         x64\Release\StartScreen.obj
+         x64\Release\StoreScreen.obj
+         코드를 생성하고 있습니다.
+         코드를 생성했습니다.
+         cppProject.vcxproj -> C:\Users\doori\Desktop\2501 김두리\x64\Release\cppProject.exe
+     1>"C:\Users\doori\Desktop\2501 김두리\cppProject\cppProject.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
+
+빌드했습니다.
+
+경과 시간: 00:00:03.48

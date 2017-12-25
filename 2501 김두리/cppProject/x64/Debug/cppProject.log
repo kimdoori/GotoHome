@@ -1,0 +1,23 @@
+﻿빌드 시작: 2017-11-17 오전 8:07:44
+     1>2 노드의 "C:\Users\doori\Desktop\2501 김두리\cppProject\cppProject.vcxproj" 프로젝트(Build 대상)입니다.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /Od /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt HowScreen.cpp
+         HowScreen.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\doori\Desktop\2501 김두리\x64\Debug\cppProject.exe" /INCREMENTAL /NOLOGO libmysql.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\doori\Desktop\2501 김두리\x64\Debug\cppProject.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\doori\Desktop\2501 김두리\x64\Debug\cppProject.lib" /MACHINE:X64 x64\Debug\ConnectDB.obj
+         x64\Debug\GameScreen.obj
+         x64\Debug\gotohome.obj
+         x64\Debug\HowScreen.obj
+         x64\Debug\MypageScreen.obj
+         x64\Debug\ResultScreen.obj
+         x64\Debug\Screen.obj
+         x64\Debug\SetWindows.obj
+         x64\Debug\SigninScreen.obj
+         x64\Debug\StartScreen.obj
+         x64\Debug\StoreScreen.obj
+         cppProject.vcxproj -> C:\Users\doori\Desktop\2501 김두리\x64\Debug\cppProject.exe
+     1>"C:\Users\doori\Desktop\2501 김두리\cppProject\cppProject.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
+
+빌드했습니다.
+
+경과 시간: 00:00:11.39
