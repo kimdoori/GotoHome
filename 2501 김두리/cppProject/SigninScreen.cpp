@@ -67,7 +67,7 @@ void SigninScreen :: printScreen(){
 	SetWindows::gotoxy(24, 12);
 	printf("회원가입하기");
 	SetWindows::gotoxy(28, 14);
-	printf("종료하기");
+	printf("뒤로가기");
 	cursor(10, 14);
 }
 
@@ -141,7 +141,7 @@ void SigninScreen::insertUserInfo(){//기존에 겹치는 아이디가 없다면 회원가입
 		Screen::userPassword = password;
 		Screen::statusSignup = true;
 
-		query = "INSERT INTO userGameInfo(id) values('" + id + "')";
+		query = "INSERT INTO userGameInfo(id,char1,char2,char3) values('" + id + "','y','n','n')";
 		mysql_query(&connectDB.mysql, query.c_str());
 		
 	}
@@ -177,9 +177,9 @@ void SigninScreen :: change(int *x, int *y){
 		case 12://회원가입하기
 			insertUserInfo();
 			break;
-		case 14://종료하기
+		case 14://뒤로가기
 			SetWindows::gotoxy(6, 16);
-			exit(0);
+			Screen::screen = "start";
 			break;
 		}
 	}

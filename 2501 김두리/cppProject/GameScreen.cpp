@@ -194,14 +194,16 @@ void GameScreen::initializeGame(){//게임을 초기화하는 함수
 	for (int i = 1; i < 32; i++){
 		line[i].y = i + 2;
 		colorRandom = (rand() % 2); //0이나 1
-		if (colorRandom){//1이면
+		
+		if (colorRandom==1){//1이면
 			line[i].color = 4;
 			loadCount++;
-			if (loadCount>7){//도로가 8개 이상이면 초록색으로
-				line[i].color = 10;
-			}
 		}
 		else{
+			line[i].color = 10;
+			loadCount = 0;
+		}
+		if (loadCount>=6){//도로가 6개 이상이면 초록색으로
 			line[i].color = 10;
 			loadCount = 0;
 		}
@@ -299,6 +301,7 @@ void GameScreen::printCar(){//화면에 자동차 출력하는 함수
 			car[count].direction *= -1;
 		}
 		// 기존 위치의 자동차를 삭제한다.
+		
 		SetWindows::setColor(15, 4);
 		SetWindows::gotoxy(car[count].x, car[count].y);
 		printf("  ");
@@ -395,7 +398,7 @@ void GameScreen::move_arrow_key(char key, int *x, int *y){
 void GameScreen::selectMaxGameUser(){
 	ConnectDB connectDB;
 	connectDB.Mysql();
-	string query = "SELECT id,MAX(score) FROM userGameInfo";
+	string query = "SELECT id,score FROM userGameInfo group by score having max(score)";
 	mysql_query(&connectDB.mysql, query.c_str()); // 쿼리를 보낸다.
 	connectDB.res = mysql_store_result(&connectDB.mysql);  // 모든 출력 결과를 서버에서 한번에 다 받아옴
 	if (connectDB.row = mysql_fetch_row(connectDB.res)){//결과의 첫번째 행

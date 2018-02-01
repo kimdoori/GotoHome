@@ -24,7 +24,7 @@
 using namespace std;
 
 
-string Screen::screen = "signin";
+string Screen::screen = "start";
 int Screen::useChar = 1;
 
 bool Screen::failPurchase = false;
@@ -34,6 +34,7 @@ bool Screen::againSignin = false;
 bool Screen::againSignup = false;
 bool Screen::againInput = false;
 
+bool Screen::missChoice = false;
 bool Screen::statusSignup = false;
 string Screen::userId = ""; // 유저 아이디
 string Screen::userPassword = ""; //유저 비밀번호
@@ -50,7 +51,6 @@ void Screen :: print(){//screen에 저장된 스크린의 이름에 따라 해당 화면 출력
 
 	while (1){
 		system("cls");
-		//SetWindows::setCursor(true);
 		system("color 0F");
 
 		if (screen != "signin"){
@@ -58,6 +58,7 @@ void Screen :: print(){//screen에 저장된 스크린의 이름에 따라 해당 화면 출력
 			printFrame();
 		}
 		if (screen == "start"){//start화면이면
+			SetWindows::setCursor(false);
 			StartScreen startScreen;
 			startScreen.printScreen();
 		}

@@ -33,13 +33,22 @@ void StartScreen::printScreen(){//화면 출력
 	int y_l = 28;
 
 	SetWindows::gotoxy(45, 20);
-	printf("게임 시작");
-	SetWindows::gotoxy(45, 22);
-	printf("게임 방법");
+	if (Screen::userId == ""){
+		printf("로그인 ");
+		SetWindows::setColor(8, 0);
+	}
+	else{
+		printf("게임 시작");
+
+	}
+	
 	SetWindows::gotoxy(45, 24);
 	printf("내 정보");
 	SetWindows::gotoxy(45, 26);
 	printf("로그 아웃");
+	SetWindows::setColor(15, 0);
+	SetWindows::gotoxy(45, 22);
+	printf("게임 방법");
 
 	SetWindows::gotoxy(45, 28);
 	printf("게임 종료");
@@ -47,6 +56,11 @@ void StartScreen::printScreen(){//화면 출력
 	SetWindows::setColor(8, 0);
 	SetWindows::gotoxy(30, 31);
 	printf("- ↑ ↓로 이동 후 enter로 선택하세요 -");
+	if (Screen::missChoice){
+		SetWindows::gotoxy(37, 33);
+		printf("- 로그인 후 이용해주세요 -");
+		Screen::missChoice = false;
+	}
 	SetWindows::setColor(15, 0);
 
 
@@ -57,21 +71,31 @@ void StartScreen::printScreen(){//화면 출력
 void StartScreen :: change(int *x, int *y) {//화면 전환 //screen을 전환할 스크린의 이름으로 바꾼다.
 	switch (*y){
 	case 20://gamestart버튼 --> signup,signin
-		Screen::screen = "game";
-
+		if (Screen::userId == ""){
+			Screen::screen = "signin";
+		}
+		else{
+			Screen::screen = "game";
+		}
 		break;
 	case 22://howtoplay
 		Screen::screen = "how";
 		break;
 	case 24://mypage
-		Screen::screen = "mypage";
+		if (Screen::statusSign)
+			Screen::screen = "mypage";
+		else
+			Screen::missChoice=true;
 		break;
 	case 26:
-		Screen::userId = "";
-		Screen::userPassword = "";
-		Screen::statusSign = false;
-		Screen::statusSignup = false;
-		Screen::screen = "signin";
+		if (Screen::statusSign){
+			Screen::userId = "";
+			Screen::userPassword = "";
+			Screen::statusSign = false;
+			Screen::statusSignup = false;
+		}
+		else
+			Screen::missChoice=true;
 		break;
 
 	case 28:
@@ -94,3 +118,4 @@ void StartScreen :: cursor(int y_h, int y_l){//키 입력받는 함수
 	} while (key != 13);//엔터치면 빠져나오기
 	change(&x, &y);
 }
+

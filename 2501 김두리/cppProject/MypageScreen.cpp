@@ -6,6 +6,7 @@ using namespace std;
 
 void MypageScreen::printScreen(){
 
+	
 	switch (Screen::useChar){
 	case 1:
 		SetWindows::gotoxy(17,17);

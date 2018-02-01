@@ -22,7 +22,8 @@ public:
 	static bool againSignin; // 다시 로그인 요청된 상태
 	static bool againSignup; // 다시 로그인 요청된 상태
 	static bool againInput; // 다시 로그인 요청된 상태
-
+	
+	static bool missChoice; // 로그인이 필요한 메뉴를 눌렀을 경우
 
 	static bool statusSignup;//회원가입한 상태
 
